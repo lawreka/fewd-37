@@ -11,7 +11,10 @@ header{
   border-bottom-style:solid;
   border-bottom-color: rgb(132, 132, 132);
   border-bottom-width: 1px;
-  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   position: relative;
 }
 nav{
