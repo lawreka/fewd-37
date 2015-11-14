@@ -32,7 +32,20 @@
 
     <script type="text/javascript" src="interface.js"></script>
     <script type="text/javascript">
-      // Your code goes here!
+      function calcFahrenheitToCelcius(tempF){
+        var fCalc = tempF;
+        var subtractF = fCalc - 32;
+        var newTempC = subtractF * 5/9;
+        return newTempC;
+      }
+
+      function calcCelciusToFarenheit(tempC){
+        var cCalc = tempC;
+        var multC = cCalc * 9/5;
+        var newTempF = multC + 32;
+        return newTempF;
+      }
+      
     </script>
   </body>
 </html>
