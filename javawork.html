@@ -4,44 +4,108 @@
     <meta charset="utf-8">
     <title> Werkin on Sum Java </title>
 
-
     <script type="text/javascript">
-      var firstName = "kathryn";
-      var lastName = "lawrence";
-      var fullName = firstName + " " + lastName
-
-      var x = 15;
-      var y = 75;
+      // var firstName = "kathryn";
+      // var lastName = "lawrence";
+      // var fullName = firstName + " " + lastName
+      //
+      // var x = 15;
+      // var y = 75;
+      // // x = 30;
+      // var sum = x + y;
+      // var difference = x - y;
+      // var product = x * y;
+      // var quotient = x / y;
+      //
       // x = 30;
-      var sum = x + y;
-      var difference = x - y;
-      var product = x * y;
-      var quotient = x / y;
+      //
+      // // alert();
+      // // alert("hello");
+      // // alert(fullName);
+      //
+      // // firstName = prompt("What is your first name?");
+      // // lastName = prompt("What is your last name?");
+      // // alert("YOUR NAME IS" + " " + firstName + " " + lastName);
+      //
+      // function convertKmToMi(km){
+      //   var half = km / 2;
+      //   var quarter = half / 4;
+      //   var mile = quarter + half;
+      //   return mile;
+      // }
+      //
+      // var num = prompt("Kilometers:");
+      // var result = convertKmToMi(num);
+      // console.log(result);
 
-      x = 30;
+      // var lbs = document.querySelector("lbs");
+      // var temp = document.querySelector("temp");
+      // var stuffed = true;
+      //
+      // button.onclick(){
+      //   if (stuffed = true){
+      //     stuffed = false;
+      //   }
+      //   else{
+      //     stuffed = true;
+      //   }
+      // }
+      //
+      // function calcTurkeyCookTime(lbs, stuffed){
+      //   if (stuffed = true){
+      //     return(lbs * 28) + 108;
+      //   }
+      //   else {
+      //     document.getElementsByClassName("stuffed").textContent = "Not Stuffed";
+      //     return(lbs * 19) + 124;
+      //   }
+      // }
 
-      // alert();
-      // alert("hello");
-      // alert(fullName);
+      // var pesos = 0;
+      //
+      // function convertPesosToDollars(pesos){
+      //   var dollars = pesos * 0.060;
+      //   return dollars;
+      // }
 
-      // firstName = prompt("What is your first name?");
-      // lastName = prompt("What is your last name?");
-      // alert("YOUR NAME IS" + " " + firstName + " " + lastName);
+      // create a new <li>
+      // set its textContent to whatever you want
+      // Get the <ul> as a parent
+      // Append the new <li> to it
 
-      function convertKmToMi(km){
-        var half = km / 2;
-        var quarter = half / 4;
-        var mile = quarter + half;
-        return mile;
-      }
 
-      var num = prompt("Kilometers:");
-      var result = convertKmToMi(num);
-      console.log(result);
 
     </script>
   </head>
   <body>
+    <!-- attempt at UI for turkey function
+   <p contenteditable="true" class="lbs">
+      0
+    </p>
+    <p contenteditable="true" class="temp">
+      325
+    </p>
+    <p class="stuffed">
+      get
+    </p> -->
+    <ul>
+    </ul>
+
+    <script>
+
+    function doIt(textContent){
+    var item = document.createElement("li");
+    item.textContent = textContent;
+    var todolist = document.querySelector("ul");
+    todolist.appendChild(item);
+    }
+
+    for (i = 1; i < 101; i++){
+      doIt(i);
+    }
+
+
+    </script>
 
   </body>
 </html>
