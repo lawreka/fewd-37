@@ -5,8 +5,9 @@
     <title> Table page</title>
 
     <style>
-    thead{
-      text-decoration: underline;
+    *{
+      font-family: sans-serif;
+      font-size: x-large;
     }
     tr{
       border: 1px solid black;
@@ -15,55 +16,47 @@
       border: 1px solid black;
     }
 
-    .owner-cells{
-      background-color: green;
-      color: white;
+    .row-number{
+      text-align: center;
     }
     </style>
   </head>
   <body>
     <table>
+      <caption> Spreadsheet </caption>
       <thead>
-        <tr>
-          <th> [owner] </th>
-          <th> [family member] </th>
-          <th> [state of being] </th>
-          <th> [how much] </th>
-          <th> [descriptor] </th>
-        </tr>
       </thead>
       <tbody>
         <tr>
-          <td contenteditable style="text-align: center;" class="owner-cells"> </td>
+          <td class="row-number"> 1 </td>
           <td contenteditable> </td>
           <td contenteditable> </td>
+        </tr>
+        <tr>
+          <td class="row-number"> 2 </td>
+          <td contenteditable> </td>
+          <td contenteditable> </td>
+
+        </tr>
+        <tr>
+          <td class="row-number"> 3 </td>
           <td contenteditable> </td>
           <td contenteditable> </td>
         </tr>
         <tr>
-          <td class="owner-cells"> your </td>
-          <td> mom </td>
-          <td> is </td>
-          <td> very </td>
-          <td> nice </td>
+          <td class="row-number"> 4 </td>
+          <td contenteditable> </td>
+          <td contenteditable> </td>
         </tr>
         <tr>
-          <td colspan="2" class="owner-cells"> your mom </td>
-          <td> </td>
-          <td> so </td>
-          <td> fat </td>
+          <td class="row-number"> 5 </td>
+          <td contenteditable> </td>
+          <td contenteditable> </td>
         </tr>
         <tr>
-          <td colspan="3"> your mom </td>
-          <td> so </td>
-          <td> smooth </td>
-        </tr>
-        <tr>
-          <td colspan="4"> your mom </td>
-          <td> the walrus </td>
-        </tr>
-        <tr>
-          <td colspan="5"> your mom </td>
+          <td class="row-number"> 6 </td>
+          <td contenteditable> </td>
+          <td contenteditable> </td>
         </tr>
       </tbody>
     </table>
