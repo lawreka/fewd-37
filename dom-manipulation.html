@@ -33,6 +33,12 @@ body { font-family: sans-serif; }
     // 5. set the prompt result to the li's textContent --> item.textContent = ?
 
     // YOUR CODE GOES HERE
+
+    var newToDo = prompt("What do you need to do today?"); //1
+    var list = document.querySelector("ol"); //3
+    var listItem = document.createElement("li"); //2
+    listItem.textContent = newToDo; //5
+    list.appendChild(listItem); //4
   }
   </script>
 </div>
