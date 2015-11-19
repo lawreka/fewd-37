@@ -19,7 +19,7 @@ body { font-family: sans-serif; }
   <ol class="todo-list">
     <li>Pick up dry cleaning</li>
   </ol>
-  
+
 
   <script>
   document.querySelector("#set-1 button").addEventListener("click", addListItem);
@@ -108,6 +108,7 @@ body { font-family: sans-serif; }
   <script>
   document.querySelector("#set-3 button").addEventListener("click", makeBold);
 
+
   function makeBold(event) {
     event.preventDefault();
 
@@ -115,6 +116,9 @@ body { font-family: sans-serif; }
     //  1. add the class "bold" using the element's classList
 
     // YOUR CODE GOES HERE
+    var boldP = document.querySelector("p.will-be-bold");
+    boldP.classList.add("bold");
+
   }
   </script>
 </div>
