@@ -19,6 +19,7 @@ body { font-family: sans-serif; }
   <ol class="todo-list">
     <li>Pick up dry cleaning</li>
   </ol>
+  
 
   <script>
   document.querySelector("#set-1 button").addEventListener("click", addListItem);
@@ -35,7 +36,7 @@ body { font-family: sans-serif; }
     // YOUR CODE GOES HERE
 
     var newToDo = prompt("What do you need to do today?"); //1
-    var list = document.querySelector("ol"); //3
+    var list = document.querySelector("ol.todo-list"); //3
     var listItem = document.createElement("li"); //2
     listItem.textContent = newToDo; //5
     list.appendChild(listItem); //4
@@ -77,6 +78,16 @@ body { font-family: sans-serif; }
     //     8.2. append img to that element
 
     // YOUR CODE GOES HERE
+    var imgSource = prompt("What's the URL?");
+    var imgWidth = prompt("Width?");
+    var imgHeight = prompt("Height?");
+    var newImg = document.createElement("img");
+    newImg.setAttribute("src", imgSource);
+    newImg.setAttribute("width", imgWidth);
+    newImg.setAttribute("height", imgHeight);
+    var getDiv = document.querySelector("div.image-container");
+    getDiv.appendChild(newImg);
+
   }
   </script>
 </div>
