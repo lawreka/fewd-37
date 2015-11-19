@@ -76,6 +76,12 @@
 
 
     </script>
+
+    <style>
+    .redden{
+      color: red;
+    }
+    </style>
   </head>
   <body>
     <!-- attempt at UI for turkey function
@@ -88,6 +94,7 @@
     <p class="stuffed">
       get
     </p> -->
+
     <ul>
     </ul>
 
@@ -104,6 +111,15 @@
       doIt(i);
     }
 
+    var magicNumber = document.querySelector("li:nth-child(50)");
+    magicNumber.setAttribute("style", "color: red");
+
+    var makeMagic = document.querySelector("li:first-child")
+    makeMagic.addEventListener("click", itemClicked);
+
+    function itemClicked(event){
+      makeMagic.classList.add("redden");
+    }
 
     </script>
 
