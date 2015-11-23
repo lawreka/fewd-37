@@ -6,20 +6,64 @@
   </head>
   <body>
     <script>
+    //add stylesheet to head
+    var head = document.querySelector("head");
+    var stylesheet = document.createElement("link");
+    head.appendChild(stylesheet);
+    stylesheet.setAttribute("rel", "stylesheet");
+    stylesheet.setAttribute("href", "acmestylesheet.css");
+    stylesheet.setAttribute("media", "screen");
     // Create the header
     var body = document.querySelector("body");
     var header = document.createElement("header");
     body.appendChild(header);
-
+    // add logo to header
+    var logo = document.createElement("img");
+    header.appendChild(logo);
+    logo.setAttribute("src", "images/acme-corplogo.jpg");
+    logo.setAttribute("alt", "ACME Corp anvil logo");
+    logo.setAttribute("height", "60px");
     // Create the nav
     var nav = document.createElement("nav");
     header.appendChild(nav);
-
+    // Create the ul
+    var links = document.createElement("ul");
+    nav.appendChild(links);
+    // Create the product link
+    var products = document.createElement("li");
+    links.appendChild(products);
+    var productlink = document.createElement("a");
+    products.appendChild(productlink);
+    productlink.textContent = "Products";
+    productlink.setAttribute("href", "acmeproducts.nope");
     // Create the sign up button
-    var button = document.createElement("button");
-    button.textContent = "Sign up";
-    nav.appendChild(header);
-
+    var signup = document.createElement("li");
+    links.appendChild(signup);
+    var signupbutton = document.createElement("button");
+    signupbutton.textContent = "Sign up";
+    signup.appendChild(signupbutton);
+    // Create main section of website
+    var mainbody = document.createElement("main");
+    body.appendChild(mainbody);
+    var textsection = document.createElement("section");
+    mainbody.appendChild(textsection);
+    // Create text header and paragraphs
+    var welcome = document.createElement("h1");
+    textsection.appendChild(welcome);
+    welcome.textContent = "Welcome to ACME Corp!";
+    var textpone = document.createElement("p");
+    textsection.appendChild(textpone);
+    textpone.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    var textptwo = document.createElement("p");
+    textsection.appendChild(textptwo);
+    textptwo.textContent = " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    // Create footer
+    var footy = document.createElement("footer");
+    body.appendChild(footy);
+    var copyright = document.createElement("p");
+    footy.appendChild(copyright);
+    copyright.textContent = "Copyright, 2015";
+    
     </script>
   </body>
 </html>
