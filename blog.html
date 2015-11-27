@@ -109,7 +109,7 @@
 
       link.addEventListener("click", like);
       link.addEventListener("click", createUnlike);
-      link.addEventListener("submit", comment);
+      form.addEventListener("submit", comment);
 
 
       function like(event) {
@@ -168,8 +168,14 @@
 
       function comment(event) {
         event.preventDefault();
-
         // Your code for comments goes here
+        var newcomment = document.querySelector("#comments");
+        var newnew = document.createElement("div");
+        newnew.setAttribute("class", "comment");
+        var newtext = document.querySelector("#new-comment-body").value;
+        newnew.textContent = newtext;
+        newcomment.appendChild(newnew);
+        document.querySelector("#new-comment-body").value = null;
       }
 
 
