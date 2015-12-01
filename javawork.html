@@ -81,6 +81,9 @@
     .redden{
       color: red;
     }
+    ul{
+      list-style-type: none;
+    }
     </style>
   </head>
   <body>
@@ -112,13 +115,13 @@
     }
 
     var magicNumber = document.querySelector("li:nth-child(50)");
-    magicNumber.setAttribute("style", "color: red");
+    // magicNumber.setAttribute("style", "color: red");
 
-    var makeMagic = document.querySelector("li:first-child")
+    var makeMagic = document.querySelector("ul")
     makeMagic.addEventListener("click", itemClicked);
 
     function itemClicked(event){
-      makeMagic.classList.add("redden");
+      magicNumber.classList.toggle("redden");
     }
 
     </script>
