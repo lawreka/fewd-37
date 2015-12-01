@@ -5,27 +5,42 @@
     <title></title>
 
     <style>
-
+    div{
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
+    span{
+      display: inline-block;
+      width: 80px;
+    }
     </style>
   </head>
   <body>
-      <label> Name: <input type="text"> </label>
-    <p>
-      <label> Email: <input type="email"> </label>
-    <p>
-      <label> Phone: <input type="text"> </label>
-    <p>
-      <label> Job:
-        <select>
-          <option> Select one... </option>
-          <option> Designer </option>
-          <option> Engineer </option>
-          <option> Other </option>
-        </select>
-      </label>
-    <p>
-      <label> <input type="checkbox"> Agree to Terms </label>
-    <p>
-      <label> <input type="submit" value="Submit"> </label>
+    <div class="goodform">
+      <form>
+        <label> <span> First Name: </span> <input type="text"> </label>
+        <p>
+        <label> <span> Last Name: </span> <input type="text"> </label>
+        <p>
+        <label> <span> Email: </span> <input type="email"> </label>
+        <p>
+        <label> <span> Phone: </span> <input type="text"> </label>
+        <p>
+        <label> <span> Job: </span>
+          <select>
+            <option> Select one... </option>
+            <option> Designer </option>
+            <option> Engineer </option>
+            <option> Other </option>
+          </select>
+        </label>
+        <p>
+        <label> <input type="checkbox"> Agree to Terms </label>
+        <p>
+        <label> <input type="submit" value="Submit"> </label>
+      </form>
+    </div>
   </body>
 </html>
