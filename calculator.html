@@ -1,47 +1,55 @@
-<table>
-  <tr>
-    <td>
-      <input type="text" class="first-operand placeholder" placeholder="Operand 1">
-    </td>
-    <td>
-      <input type="text" class="second-operand placeholder" placeholder="Operand 2">
-    </td>
-    <td>
-      =
-    </td>
-    <td>
-      <input type="text" class="result placeholder" placeholder="Result" disabled>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <button class="add-button inverted-button">+</button>
-    </td>
-    <td>
-      <button class="subtract-button inverted-button">-</button>
-    </td>
-    <td>
-      <button class="multiply-button inverted-button">*</button>
-    </td>
-    <td>
-      <button class="divide-button inverted-button">/</button>
-    </td>
-  </tr>
-</table>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    * { box-sizing: border-box; }
+    body { font-size: 20px; font-family: sans-serif; }
 
-<script>
+    td { width: 100px; text-align: center; }
+    .placeholder, button { width: 100%; }
+    .placeholder { height: 23px; border: 1px solid #bababa; border-radius: 3px; }
+    button { cursor: pointer; border: 1px solid #58c0f5; color: #58c0f5; background-color: white; font: inherit; }
+    button { background-color: #58c0f5; color: white; border-radius: 3px; }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <input type="text" class="first-operand placeholder" placeholder="Operand 1">
+        </td>
+        <td>
+          <input type="text" class="second-operand placeholder" placeholder="Operand 2">
+        </td>
+        <td>
+          =
+        </td>
+        <td>
+          <input type="text" class="result placeholder" placeholder="Result" disabled>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="add-button inverted-button">+</button>
+        </td>
+        <td>
+          <button class="subtract-button inverted-button">-</button>
+        </td>
+        <td>
+          <button class="multiply-button inverted-button">*</button>
+        </td>
+        <td>
+          <button class="divide-button inverted-button">/</button>
+        </td>
+      </tr>
+    </table>
+    
+    <script>
 
-// Your code goes here...
+    // Your code goes here...
 
-</script>
-
-<style>
-* { box-sizing: border-box; }
-body { font-size: 20px; font-family: sans-serif; }
-
-td { width: 100px; text-align: center; }
-.placeholder, button { width: 100%; }
-.placeholder { height: 23px; border: 1px solid #bababa; border-radius: 3px; }
-button { cursor: pointer; border: 1px solid #58c0f5; color: #58c0f5; background-color: white; font: inherit; }
-button { background-color: #58c0f5; color: white; border-radius: 3px; }
-</style>
+    </script>
+  </body>
+</html>
