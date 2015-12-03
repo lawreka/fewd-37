@@ -97,11 +97,19 @@
     <p class="stuffed">
       get
     </p> -->
+    <div class="like">
+      <a href="#" class="like-link" >Like</a>
+      (<span class="like-count" data-count="0">0</span>)
+    </div>
+
+
 
     <ul>
     </ul>
 
     <script>
+    var link = document.querySelector(".like-link");
+    link.addEventListener("click", like);
 
     function doIt(textContent){
     var item = document.createElement("li");
@@ -123,6 +131,18 @@
     function itemClicked(event){
       magicNumber.classList.toggle("redden");
     }
+    function like(event) {
+      event.preventDefault();
+      // Your code for like goes here
+      var likecount = document.querySelector("span.like-count");
+      var likedata = likecount.getAttribute("data-count");
+      var likes = Number(likedata);
+      var newlike = likes + 1;
+      // newlike.toString();
+      likecount.setAttribute("data-count", newlike);
+      likecount.textContent = newlike;
+    }
+
 
     </script>
 
