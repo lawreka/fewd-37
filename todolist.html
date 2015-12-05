@@ -54,6 +54,10 @@
       label {
         cursor: pointer;
       }
+      input:checked + span{
+        color: rgb(220, 220, 220);
+        text-decoration: line-through;
+      }
     </style>
   </head>
   <body>
@@ -77,6 +81,7 @@
       var newItemLabel = document.createElement("label");
       var newItemBox = document.createElement("input");
       newItemBox.setAttribute("type", "checkbox");
+
       var newItemText = document.createElement("span");
       newItemText.textContent = text.value;
       var list = document.querySelector("#todo-list");
