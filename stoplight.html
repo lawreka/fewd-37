@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Green Means Go!</title>
+    <style>
+    button{
+
+    }
+    .lightbody{
+      background-color: #FBB917;
+      width: 300px;
+      height: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #AF7817;
+      border-radius: 50px;
+    }
+    .light{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      position: relative;
+      top: 30px;
+      border-style: solid;
+      border-color: black;
+      border-top-width: thick;
+      border-bottom-width: thin;
+    }
+    .neutral{
+      background-color: #AF7817;
+      box-shadow: inset 0px 10px 10px #493D26;
+    }
+    .red{
+      background-color: red;
+      box-shadow: 0px 0px 30px red;
+    }
+    .yello{
+      background-color: yellow;
+      box-shadow: 0px 0px 30px yellow;
+    }
+    .green{
+      background-color: green;
+      box-shadow: 0px 0px 30px green;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="controls">
+      <button class="stop"> Stop </button>
+      <button class="slow"> Slow </button>
+      <button class="go"> Go </button>
+      <button class="caution"> Caution </button>
+    </nav>
+    <div class="lightbody">
+      <div class="light top neutral">
+      </div>
+      <div class="light middle neutral">
+      </div>
+      <div class="light bottom neutral">
+      </div>
+    </div>
+    <script>
+    var stop = document.querySelector(".stop");
+    stop.addEventListener("click", neutralize);
+    stop.addEventListener("click", stopLight);
+
+    var slow = document.querySelector(".slow");
+    slow.addEventListener("click", neutralize);
+    slow.addEventListener("click", slowLight);
+
+    var go = document.querySelector(".go");
+    go.addEventListener("click", neutralize);
+    go.addEventListener("click", goLight);
+
+    var caution = document.querySelector(".caution");
+    var cautionInt;
+    caution.addEventListener("click", neutralize);
+    caution.addEventListener("click", cautionToggle);
+
+    function neutralize(event){
+      var redlite = document.querySelector(".top");
+      var yellite = document.querySelector(".middle");
+      var grnlite = document.querySelector(".bottom");
+      redlite.classList.remove("red");
+      redlite.classList.add("neutral");
+      yellite.classList.remove("yello");
+      yellite.classList.add("neutral");
+      grnlite.classList.remove("green");
+      grnlite.classList.add("neutral");
+      clearInterval(cautionInt);
+    }
+    function stopLight(event){
+      var redlite = document.querySelector(".top");
+      redlite.classList.remove("neutral");
+      redlite.classList.add("red");
+    }
+
+    function slowLight(event){
+      var yellite = document.querySelector(".middle");
+      yellite.classList.remove("neutral");
+      yellite.classList.add("yello");
+    }
+
+    function goLight(event){
+      var grnlite = document.querySelector(".bottom");
+      grnlite.classList.remove("neutral");
+      grnlite.classList.add("green");
+    }
+
+    function cautionToggle(){
+      cautionInt = setInterval(cautionLight, 1000);
+    }
+
+    function cautionLight(event){
+      var yellite = document.querySelector(".middle");
+      yellite.classList.toggle("yello");
+      yellite.classList.toggle("neutral");
+    }
+
+    </script>
+  </body>
+</html>
