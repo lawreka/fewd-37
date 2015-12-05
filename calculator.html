@@ -45,11 +45,47 @@
         </td>
       </tr>
     </table>
-    
+
     <script>
+    var add = document.querySelector(".add-button");
+    add.addEventListener("click", addition);
 
-    // Your code goes here...
+    var sub = document.querySelector(".subtract-button");
+    sub.addEventListener("click", subtraction);
 
+    var mult = document.querySelector(".multiply-button");
+    mult.addEventListener("click", multiplication);
+
+    var div = document. querySelector(".divide-button");
+    div.addEventListener("click", division);
+
+    function addition(event){
+      var op1 = Number(document.querySelector(".first-operand").value);
+      var op2 = Number(document.querySelector(".second-operand").value);
+      var result = op1 + op2;
+      document.querySelector(".result").value = result;
+    }
+
+    function subtraction(event){
+      var op1 = Number(document.querySelector(".first-operand").value);
+      var op2 = Number(document.querySelector(".second-operand").value);
+      var result = op1 - op2;
+      document.querySelector(".result").value = result;
+    }
+
+    function multiplication(event){
+      var op1 = Number(document.querySelector(".first-operand").value);
+      var op2 = Number(document.querySelector(".second-operand").value);
+      var result = op1 * op2;
+      document.querySelector(".result").value = result;
+    }
+
+    function division(event){
+      var op1 = Number(document.querySelector(".first-operand").value);
+      var op2 = Number(document.querySelector(".second-operand").value);
+      var result = op1 / op2;
+      document.querySelector(".result").value = result;
+    }
     </script>
   </body>
 </html>
