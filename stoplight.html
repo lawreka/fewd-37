@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <title>Green Means Go!</title>
     <style>
-    button{
-
-    }
     .lightbody{
       background-color: #FBB917;
       width: 300px;
@@ -31,6 +28,8 @@
       border-color: black;
       border-top-width: thick;
       border-bottom-width: thin;
+      background-blend-mode: hard-light;
+      background-image: repeating-linear-gradient(45deg, #AF7817, rgb(0,0,0) 1%, rgb(255,255,255) 1%);
     }
     .neutral{
       background-color: #AF7817;
@@ -56,6 +55,7 @@
       <button class="slow"> Slow </button>
       <button class="go"> Go </button>
       <button class="caution"> Caution </button>
+      <button class="off"> Off </button>
     </nav>
     <div class="lightbody">
       <div class="light top neutral">
@@ -83,7 +83,11 @@
     caution.addEventListener("click", neutralize);
     caution.addEventListener("click", cautionToggle);
 
+    var off = document.querySelector(".off");
+    off.addEventListener("click", neutralize);
+
     function neutralize(event){
+      clearInterval(cautionInt);
       var redlite = document.querySelector(".top");
       var yellite = document.querySelector(".middle");
       var grnlite = document.querySelector(".bottom");
@@ -93,8 +97,8 @@
       yellite.classList.add("neutral");
       grnlite.classList.remove("green");
       grnlite.classList.add("neutral");
-      clearInterval(cautionInt);
     }
+
     function stopLight(event){
       var redlite = document.querySelector(".top");
       redlite.classList.remove("neutral");
