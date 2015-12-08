@@ -71,55 +71,61 @@
 
     <script>
     // make A work
-    var akey = document.querySelector("#A");
-    akey.addEventListener("click", playNote);
-
-    // function playA(event){
-    //   howl.play("A");
-    // }
-    // // make B work
-    var bkey = document.querySelector("#B");
-    bkey.addEventListener("click", playNote);
-
-    // function playB(event){
-    //   howl.play("B");
-    // }
-    // // make C work
-    var ckey = document.querySelector("#C");
-    ckey.addEventListener("click", playNote);
-
-    // function playC(event){
-    //   howl.play("C");
-    // }
-    // make D work
-    var dkey = document.querySelector("#D");
-    dkey.addEventListener("click", playNote);
+    // var akey = document.querySelector("#A");
+    // akey.addEventListener("click", playNote);
     //
-    // function playD(event){
-    //   howl.play("D");
+    // // function playA(event){
+    // //   howl.play("A");
+    // // }
+    // // // make B work
+    // var bkey = document.querySelector("#B");
+    // bkey.addEventListener("click", playNote);
+    //
+    // // function playB(event){
+    // //   howl.play("B");
+    // // }
+    // // // make C work
+    // var ckey = document.querySelector("#C");
+    // ckey.addEventListener("click", playNote);
+    //
+    // // function playC(event){
+    // //   howl.play("C");
+    // // }
+    // // make D work
+    // var dkey = document.querySelector("#D");
+    // dkey.addEventListener("click", playNote);
+    // //
+    // // function playD(event){
+    // //   howl.play("D");
+    // // }
+    // // make E work
+    // var ekey = document.querySelector("#E");
+    // ekey.addEventListener("click", playNote);
+    //
+    // // function playE(event){
+    // //   howl.play("E");
+    // // }
+    // // make F work
+    // var fkey = document.querySelector("#F");
+    // fkey.addEventListener("click", playNote);
+    //
+    // function playF(event){
+    //   howl.play("F");
     // }
-    // make E work
-    var ekey = document.querySelector("#E");
-    ekey.addEventListener("click", playNote);
+    // // make G work
+    // var gkey = document.querySelector("#G");
+    // gkey.addEventListener("click", playNote);
+    // //
+    // // function playG(event){
+    // //   howl.play("G");
+    // // }
 
-    // function playE(event){
-    //   howl.play("E");
-    // }
-    // make F work
-    var fkey = document.querySelector("#F");
-    fkey.addEventListener("click", playNote);
+    var keys = document.querySelectorAll(".key");
 
-    function playF(event){
-      howl.play("F");
+    for (var i = 0; i < keys.length; i++){
+      keys[i].addEventListener("click", playNote);
     }
-    // make G work
-    var gkey = document.querySelector("#G");
-    gkey.addEventListener("click", playNote);
-    //
-    // function playG(event){
-    //   howl.play("G");
-    // }
-
+    
     function playNote(event){
       event.preventDefault();
       howl.play(event.target.getAttribute("id"));
