@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .carousel-container{
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .right{
+      position: relative;
+      float: right;
+    }
+    .left{
+      position: relative;
+      float: left;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+        <div class="carousel-container">
+          <button class="right"> >> </button>
+          <img src="images/carousel/1.png" class ="image" data-count="1"/>
+          <button class="left"> << </button>
+        </div>
+    </main>
+
+    <script>
+      var rightButt = document.querySelector("button.right");
+      rightButt.addEventListener("click", imgFwd);
+      var leftButt = document.querySelector("button.left");
+      leftButt.addEventListener("click", imgBck);
+      var imageCount = document.querySelector("data-count");
+      var pic = document.querySelector("image");
+
+      function imgFwd(event){
+        if (imageCount <= 3){
+          imageCount + 1;
+        }
+        else{
+          imageCount = 1;
+        }
+        // pic.src = "images/carousel/" + imageCount + ".png";
+      }
+
+      function imgBck(event){
+        if (imageCount >= 2){
+          imageCount - 1;
+        }
+        else{
+          imageCount = 3;
+        }
+        // pic.src = "images/carousel/" + imageCount + ".png";
+      }
+
+    </script>
+  </body>
+</html>
