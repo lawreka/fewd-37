@@ -72,54 +72,58 @@
     <script>
     // make A work
     var akey = document.querySelector("#A");
-    akey.addEventListener("click", playA);
+    akey.addEventListener("click", playNote);
 
-    function playA(event){
-      howl.play("A");
-    }
-    // make B work
+    // function playA(event){
+    //   howl.play("A");
+    // }
+    // // make B work
     var bkey = document.querySelector("#B");
-    bkey.addEventListener("click", playB);
+    bkey.addEventListener("click", playNote);
 
-    function playB(event){
-      howl.play("B");
-    }
-    // make C work
+    // function playB(event){
+    //   howl.play("B");
+    // }
+    // // make C work
     var ckey = document.querySelector("#C");
-    ckey.addEventListener("click", playC);
+    ckey.addEventListener("click", playNote);
 
-    function playC(event){
-      howl.play("C");
-    }
+    // function playC(event){
+    //   howl.play("C");
+    // }
     // make D work
     var dkey = document.querySelector("#D");
-    dkey.addEventListener("click", playD);
-
-    function playD(event){
-      howl.play("D");
-    }
+    dkey.addEventListener("click", playNote);
+    //
+    // function playD(event){
+    //   howl.play("D");
+    // }
     // make E work
     var ekey = document.querySelector("#E");
-    ekey.addEventListener("click", playE);
+    ekey.addEventListener("click", playNote);
 
-    function playE(event){
-      howl.play("E");
-    }
+    // function playE(event){
+    //   howl.play("E");
+    // }
     // make F work
     var fkey = document.querySelector("#F");
-    fkey.addEventListener("click", playF);
+    fkey.addEventListener("click", playNote);
 
     function playF(event){
       howl.play("F");
     }
     // make G work
     var gkey = document.querySelector("#G");
-    gkey.addEventListener("click", playG);
+    gkey.addEventListener("click", playNote);
+    //
+    // function playG(event){
+    //   howl.play("G");
+    // }
 
-    function playG(event){
-      howl.play("G");
+    function playNote(event){
+      event.preventDefault();
+      howl.play(event.target.getAttribute("id"));
     }
-
     </script>
   </body>
 </html>
