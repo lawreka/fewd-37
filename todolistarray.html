@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #f1f0f5;
+        font-family: sans-serif;
+        font-size: 18px;
+        line-height: 1.4em;
+      }
+      main {
+        margin: 2em auto;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        background: white;
+        padding: 2em 3em;
+        max-width: 600px;
+      }
+      input,
+      button {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom-width: 2px;
+        border-radius: 5px; font-size: inherit;
+        padding: .5em 1em;
+        cursor: pointer;
+      }
+      #new-todo-item-input {
+        width: 70%;
+      }
+      button {
+        color: white;
+        width: 28%;
+        background-color: #049cd8;
+      }
+      form,
+      ul {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        margin-top: 0.75em;
+        padding-top: 0.75em;
+      }
+      li span {
+        margin-left: 0.5em;
+      }
+      label {
+        cursor: pointer;
+      }
+      input:checked + span{
+        color: rgb(220, 220, 220);
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form id="new-todo-item-form">
+        <input type="text" id="new-todo-item-input" placeholder="What do you need to do?">
+        <button type="submit">Create</button>
+      </form>
+
+      <ul id="todo-list">
+      </ul>
+    </main>
+    <script>
+    var list = document.querySelector("#new-todo-item-form");
+    list.addEventListener("submit", createItem);
+
+
+    function createItem(event){
+      event.preventDefault();
+      var array = document.querySelector("#new-todo-item-input").value.split(", ");
+      for (var i = 0; i < array.length; i++){
+        addItem(array[i]);
+      }
+      document.querySelector("#new-todo-item-input").value = "";
+    }
+
+    function addItem(text){
+      var newItem = document.createElement("li");
+      var newItemLabel = document.createElement("label");
+      var newItemBox = document.createElement("input");
+      newItemBox.setAttribute("type", "checkbox");
+      var newItemText = document.createElement("span");
+      newItemText.textContent = text;
+      var list = document.querySelector("#todo-list");
+      list.appendChild(newItem);
+      newItem.appendChild(newItemLabel);
+      newItemLabel.appendChild(newItemBox);
+      newItemLabel.appendChild(newItemText);
+    }
+    // Your code goes here...
+
+    </script>
+  </body>
+</html>
