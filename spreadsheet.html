@@ -80,13 +80,12 @@
         newnewRow.appendChild(newnewCol);
       }
     }
+
     function addCol(event){
       var newCol = columns.push((columns.length +1));
-      var existingCol = document.querySelector("tr");
-      var newnewCol = document.createElement("td");
-      existingCol.appendChild(newnewCol);
-      for (var i = 0; i < rows.length; i++){
-        var correspondingRow = document.querySelector("tr:nth-child(1n+0)");
+      var allRows = document.querySelectorAll("tr");
+      for (var i = 0; i < allRows.length; i++){
+        var correspondingRow = allRows[i];
         var newnewRow = document.createElement("td");
         newnewRow.setAttribute("contenteditable", "true");
         newnewRow.textContent = "";
