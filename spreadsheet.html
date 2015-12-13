@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body {
+      font-family: sans-serif;
+      margin: 2em 4em;
+    }
+    table {
+      margin-bottom: 1em;
+    }
+    td {
+      border: 1px solid #ccc;
+      padding: 1em;
+    }
+    button {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom-width: 2px;
+      border-radius: 5px; font-size: inherit;
+      color: white;
+      background-color: #049cd8;
+      padding: .5em 1em;
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Spreadsheet</h1>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td contenteditable>Avand</td>
+          <td contenteditable>Instructor</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td contenteditable>Sandi</td>
+          <td contenteditable>TA</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td contenteditable>Yana</td>
+          <td contenteditable>Student</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td contenteditable>Maks</td>
+          <td contenteditable>Student</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="add-row">Add a Row</button>
+    <button id="add-column">Add a Column</button>
+
+    <script>
+    var rowButt = document.querySelector("#add-row");
+    rowButt.addEventListener("click", addRow);
+    var colButt = document.querySelector("#add-column");
+    colButt.addEventListener("click", addCol);
+    var columns = ["1", "2"];
+    var rows = ["1", "2", "3", "4"];
+
+    function addRow(event){
+      var newRow = rows.push((rows.length +1));
+      var existingRow = document.querySelector("table");
+      var newnewRow = document.createElement("tr");
+      var newnewRowText = document.createElement("td");
+      newnewRowText.textContent = rows.length;
+      existingRow.appendChild(newnewRow);
+      newnewRow.appendChild(newnewRowText);
+      for (var i = 0; i < columns.length; i++){
+        var correspondingCol = document.querySelector("table");
+        var newnewCol = document.createElement("td");
+        newnewCol.setAttribute("contenteditable", "true");
+        newnewRow.appendChild(newnewCol);
+      }
+    }
+    function addCol(event){
+      var newCol = columns.push((columns.length +1));
+      var existingCol = document.querySelector("tr");
+      var newnewCol = document.createElement("td");
+      existingCol.appendChild(newnewCol);
+      for (var i = 0; i < rows.length; i++){
+        var correspondingRow = document.querySelector("tr:nth-child(1n+0)");
+        var newnewRow = document.createElement("td");
+        newnewRow.setAttribute("contenteditable", "true");
+        newnewRow.textContent = "";
+        correspondingRow.appendChild(newnewRow);
+      }
+    }
+
+    </script>
+  </body>
+</html>
