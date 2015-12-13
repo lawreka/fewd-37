@@ -23,7 +23,7 @@
     <main>
         <div class="carousel-container">
           <button class="right"> >> </button>
-          <img src="images/carousel/1.png" class ="image" data-count="0"/>
+          <img src="images/carousel/1.png" class ="image" data-count="1"/>
           <button class="left"> << </button>
         </div>
     </main>
@@ -34,33 +34,31 @@
       var leftButt = document.querySelector("button.left");
       leftButt.addEventListener("click", imgBck);
 
-      var imageArray = ["images/carousel/1.png", "images/carousel/2.png", "images/carousel/3.png"];
+      // var imageArray = ["images/carousel/1.png", "images/carousel/2.png", "images/carousel/3.png"];
       var pic = document.querySelector("img.image");
       var imageCount = parseInt(pic.getAttribute("data-count"));
 
       function imgFwd(event){
-        if (imageCount < imageArray.length){
+        if (imageCount < 3){
           imageCount = imageCount + 1;
         }
         else{
-          imageCount = 0;
-          console.log(imageCount);
+          imageCount = 1;
         }
-
-        pic.src = imageArray[imageCount];
-        // pic.src = "images/carousel/" + imageCount + ".png";
+        // pic.src = imageArray[imageCount];
+        pic.src = "images/carousel/" + imageCount + ".png";
       }
 
       function imgBck(event){
         event.preventDefault();
-        if (imageCount >= imageArray.length){
-          imageCount - 1;
+        if (imageCount > 1){
+          imageCount = imageCount - 1;
         }
         else{
-          imageCount = imageArray.length;
+          imageCount = 3;
         }
-        pic.src = imageArray[imageCount];
-        // pic.src = "images/carousel/" + imageCount + ".png";
+        // pic.src = imageArray[imageCount];
+        pic.src = "images/carousel/" + imageCount + ".png";
       }
 
     </script>
