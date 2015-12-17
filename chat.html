@@ -3,16 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
 
+    .hidden{
+      display: none !important;
+    }
+
+    #no-messages{
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    </style>
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
   </head>
   <body>
 
+    <div id="no-messages">
+      Messages
+    </div>
+
+
     <script>
+
     var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
 
     var message = {
-      messageBody: "I'm a nerd",
+      messageBody: "I'm still a nerd",
       username: "Avand"
     };
 
