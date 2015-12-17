@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+    var username = localStorage.getItem(username);
+    if (username == undefined){
+      var username = prompt("what is your username?");
+      localStorage.setItem("username", username);
+    }
+    console.log(username);
+
+    // localStorage.clear();
+
+
+    </script>
+  </body>
+</html>
