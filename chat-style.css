@@ -1,0 +1,83 @@
+.hidden{
+  display: none !important;
+}
+*{
+  font-family: sans-serif;
+}
+
+#background{
+  margin-bottom:120px;
+  padding: 0px;
+  background-color: rgb(234, 245, 254);
+}
+
+.textbubble{
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px lightgrey;
+}
+
+.userbubble{
+  text-align: left;
+  font-size: small;
+  display: block;
+  margin-left: 30px;
+  color: grey;
+}
+
+.textbubbletail{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border: 8px solid lightgrey;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  background-color: transparent;
+  position: relative;
+  left: 10px;
+  top: 0px;
+}
+
+#no-messages{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  color: rgb(177, 177, 177);
+  font-weight: lighter;
+  font-size: 2em;
+}
+#message-input{
+  text-align: center;
+  height: 100px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2px solid darkgrey;
+  background-color: rgb(177, 177, 177);
+}
+
+#message-text{
+  margin-top: 1%;
+  margin-bottom: 3%;
+  padding: 2%;
+  width: 70%;
+}
+
+#send{
+  width: 10%;
+  padding: 2%;
+  margin: 2%;
+  background-color: rgb(225, 200, 255);
+  border-radius: 10px;
+  font-size: 1em;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 2px black;
+  border: 1px solid grey;
+}
