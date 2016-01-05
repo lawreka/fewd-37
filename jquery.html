@@ -1,0 +1,16 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+
+$.get("http://omdbapi.com/?s=matrix", resultsReceived);
+
+function resultsReceived(results){
+  console.log("data is", results);
+
+  for (var i = 0; i < results["Search"].length; i++){
+    console.log(i, results["Search"][i]);
+  }
+}
+
+
+</script>
