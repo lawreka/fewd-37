@@ -17,12 +17,17 @@ $("#movie-search-form").submit(formSubmitted);
 function formSubmitted(event) {
   event.preventDefault();
   if ($("#movies").has("li")){
+
     var movieList = document.querySelector("#movies");
+    // var movieList = $("#movies");
     var currentMovies = document.querySelectorAll("li");
+    // var currentMovies = $("li");
     for (var i = 0; i < currentMovies.length; i++){
       movieList.removeChild(currentMovies[i]);
+      // movieList.remove(currentMovies[i]);
     }
   }
+  // $("#movies").empty();
   var url = "http://omdbapi.com/?s=" + $("#query").val();
   for (p = 1; p < 100; p++){
       $.get(url + "&page=" + p, resultsReceived);
@@ -40,25 +45,38 @@ function resultsReceived(results) {
     listResult(poster, title, link, year);
   }
   document.querySelector("#query").value = "";
+
 }
 
   function listResult(poster, title, link, year){
-    var movieList = document.querySelector("#movies");
-    var newMovie = document.createElement("li");
-    newMovie.setAttribute("class", "movie");
-    movieList.appendChild(newMovie);
-    var newPoster = document.createElement("img");
-    newPoster.setAttribute("src", poster);
-    newMovie.appendChild(newPoster);
-    var movieTitle = document.createElement("div");
-    movieTitle.setAttribute("class", "movie-title");
-    newMovie.appendChild(movieTitle);
-    var movieLink = document.createElement("a");
-    movieLink.setAttribute("href", "https://www.imdb.com/title/" + link);
-    movieLink.textContent = title;
-    movieTitle.appendChild(movieLink);
-    var movieYear = document.createElement("div");
-    movieYear.setAttribute("class", "movie-release-date");
-    movieYear.textContent = year;
-    newMovie.appendChild(movieYear);
+    // var movieList = document.querySelector("#movies");
+    // var newMovie = document.createElement("li");
+    // newMovie.setAttribute("class", "movie");
+    // movieList.appendChild(newMovie);
+    // var newPoster = document.createElement("img");
+    // newPoster.setAttribute("src", poster);
+    // newMovie.appendChild(newPoster);
+    // var movieTitle = document.createElement("div");
+    // movieTitle.setAttribute("class", "movie-title");
+    // newMovie.appendChild(movieTitle);
+    // var movieLink = document.createElement("a");
+    // movieLink.setAttribute("href", "https://www.imdb.com/title/" + link);
+    // movieLink.textContent = title;
+    // movieTitle.appendChild(movieLink);
+    // var movieYear = document.createElement("div");
+    // movieYear.setAttribute("class", "movie-release-date");
+    // movieYear.textContent = year;
+    // newMovie.appendChild(movieYear);
+
+    var movieList = $("#movies");
+    var newMovie = $("<li>").addClass("movie");
+    movieList.append(newMovie);
+    var newPoster = $("<img>").attr("src", poster);
+    newMovie.append(newPoster);
+    var movieTitle = $("<div>").addClass("movie-title");
+    newMovie.append(movieTitle);
+    var movieLink = $("<a>").attr("href", "https://imdb.com/title/" + link).text(title);
+    movieTitle.append(movieLink);
+    var movieYear = $("<div>").addClass("movie-release-date").text(year);
+    newMovie.append(movieYear);
   }
