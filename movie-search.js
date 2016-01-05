@@ -24,7 +24,10 @@ function formSubmitted(event) {
     }
   }
   var url = "http://omdbapi.com/?s=" + $("#query").val();
-  $.get(url, resultsReceived);
+  for (p = 1; p < 100; p++){
+      $.get(url + "&page=" + p, resultsReceived);
+  }
+
 }
 
 function resultsReceived(results) {
@@ -33,16 +36,20 @@ function resultsReceived(results) {
     var title = results["Search"][i]["Title"];
     var link = results["Search"][i]["imdbID"];
     var year = results["Search"][i]["Year"];
-    listResult(title, link, year);
+    var poster = results["Search"][i]["Poster"];
+    listResult(poster, title, link, year);
   }
   document.querySelector("#query").value = "";
 }
 
-  function listResult(title, link, year){
+  function listResult(poster, title, link, year){
     var movieList = document.querySelector("#movies");
     var newMovie = document.createElement("li");
     newMovie.setAttribute("class", "movie");
     movieList.appendChild(newMovie);
+    var newPoster = document.createElement("img");
+    newPoster.setAttribute("src", poster);
+    newMovie.appendChild(newPoster);
     var movieTitle = document.createElement("div");
     movieTitle.setAttribute("class", "movie-title");
     newMovie.appendChild(movieTitle);
