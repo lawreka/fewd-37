@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ANTISOCIAL LAME MACHINE</title>
+
+    <style>
+    body{
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    ul{
+      list-style: none;
+    }
+    </style>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div>Welcome to ANTISOCIAL LAME MACHINE<div>
+    <div>please log in to facebook to see how many events you didn't attend for the lifetime of your facebook profile</div>
+    <br>
+    <button id="login"> Log in to Facebook </button>
+    <br>
+    <br>
+    <!-- <button id="events"> Get my Events </button> -->
+
+    <script>
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '948050241942570',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+
+        document.getElementById("login").addEventListener("click", function(event){
+            event.preventDefault();
+            FB.login(function(response) {
+              if (response.authResponse) {
+                console.log('Welcome!  Fetching your information.... ');
+                  FB.api('/me', function(response) {
+                  console.log('Good to see you, ' + response.name + '.');
+                });
+              } else {
+                  console.log('User cancelled login or did not fully authorize.');
+                }
+            }, { scope: "user_events"});
+            $("#login").remove();
+            $("<button>").attr("id", "events").text("Get my events").appendTo("body").on("click", lameMachine);
+          });
+
+
+
+
+
+
+         function lameMachine(event){
+          event.preventDefault();
+          FB.api(
+            "/me/events",
+            function (response){
+              if (response && !response.error){
+                console.log(response);
+                var eventList = $("<ul>").appendTo("body");
+                var eventArr = response["data"];
+                for (var i = 0; i < eventArr.length; i++){
+                  var eventNam = response["data"][i]["name"];
+                  var nuvent = $("<li>").text(eventNam).appendTo(eventList);
+                }
+                var antisoc = $("<div>").appendTo("body").text("you were only invited to " + eventArr.length + " events in your profile's lifetime, how sad");
+              }
+              else{
+                console.log("Events not found");
+              }
+            }
+          )
+        }
+
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+      </script>
+  </body>
+</html>
