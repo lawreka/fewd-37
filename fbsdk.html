@@ -63,7 +63,7 @@
          function lameMachine(event){
           event.preventDefault();
           FB.api(
-            "/me/events",
+            "/me/events?&limit=500",
             function (response){
               if (response && !response.error){
                 console.log(response);
