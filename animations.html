@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    #ball{
+      background-color: purple;
+      height: 100px;
+      width: 100px;
+      border-radius: 100%;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+    }
+    @keyframes bounce {
+      0% {
+        transform: translateY(0px);
+      }
+      35% {
+        transform: translateY(-100px);
+      }
+      55% {
+        transform: translateY(0px);
+      }
+      65%{
+        transform: translateY(-50px);
+      }
+      75%{
+        transform: translateY(0px);
+      }
+      85%{
+        transform: translateY(-30px);
+      }
+    }
+    .bounce{
+      animation: bounce;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+    }
+    #square{
+      background-color: magenta;
+      height: 100px;
+      width: 100px;
+      position: fixed;
+      left: 20%;
+      top: 10%;
+    }
+    </style>
+
+  </head>
+  <body>
+    <button id="bounce">Bounce</button>
+    <div id="ball">
+    </div>
+    <div id="square">
+    </div>
+    <script>
+      document.getElementById("bounce").addEventListener("click", bounceBall);
+      function bounceBall(){
+        document.getElementById("ball").classList.toggle("bounce");
+      }
+    </script>
+  </body>
+</html>
