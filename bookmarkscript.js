@@ -1,1 +1,1 @@
-console.log("Bookmark'd B]")
+console.log("Bookmark'd B]");
