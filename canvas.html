@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    main{
+      /*position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: linear-gradient(180deg, white, black);
+      overflow-y: scroll;*/
+    }
+    canvas{
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="frame">
+        <img id="pic" src="http://proxy.avandamiri.com/get?url=http%3A//lawreka.github.io/fewd-37/images/cat.jpg">
+      </div>
+      <canvas id="canvo"></canvas>
+      <div id="color"></div>
+    </main>
+
+    <script>
+
+      var cat = document.getElementById("pic");
+      var catpic = new Image();
+      catpic.src = cat.src;
+      var c = document.getElementById("canvo");
+      var ctx = c.getContext("2d");
+      catpic.onload = function(){
+        ctx.drawImage(catpic, 0, 0);
+        catpic.style.display = "none";
+      };
+      var color = document.getElementById("color");
+      function pick(event){
+        var x = event.layerX;
+        var y = event.layerY;
+        var pixel = ctx.getImageData(x, y, 1, 1);
+        var data = pixel.data;
+        var rgba = "rgba(" + data[0] + "," + data[1] + "," + data[2] + "," + data[3] + ")";
+        color.style.background = rgba;
+        color.textContent = rgba;
+      }
+      c.addEventListener("mousemove", pick);
+      // ctx.fillStyle = "#FF0000";
+      // ctx.fillRect(0, 0, 150, 75);
+      // ctx.moveTo(0, 0);
+      // ctx.lineTo(200, 100);
+      // ctx.stroke();
+      // ctx.beginPath();
+      // ctx.arc(95, 50, 40, 0, 2*Math.PI);
+      // ctx.stroke();
+      // ctx.font = "30px Arial";
+      // ctx.fillText("Hello Canvas", 10, 50);
+      // ctx.strokeText("Hello Canvas", 50, 50);
+      // var grd = ctx.createLinearGradient(0, 0, 200, 0);
+      // grd.addColorStop(0, "red");
+      // grd.addColorStop(1, "white");
+      // ctx.fillStyle = grd;
+      // ctx.fillRect(10, 10, 150, 80);
+      // grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+      // grd.addColorStop(0, "blue");
+      // grd.addColorStop(1, "turquoise");
+      // ctx.fillStyle = grd;
+      // ctx.fillRect(50, 50, 200, 130);
+
+    </script>
+
+  </body>
+</html>
