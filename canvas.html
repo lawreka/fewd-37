@@ -14,43 +14,60 @@
       overflow-y: scroll;*/
     }
     canvas{
-      width: 500px;
+      /*width: 500px;
       height: 500px;
-      border: 1px solid black;
+      border: 1px solid black;*/
     }
     </style>
+    <script src="../Background-Color-Thief/background-color-theif.js">
+    </script>
   </head>
   <body>
     <main>
-      <div id="frame">
-        <img id="pic" src="http://proxy.avandamiri.com/get?url=http%3A//lawreka.github.io/fewd-37/images/cat.jpg">
-      </div>
-      <canvas id="canvo"></canvas>
-      <div id="color"></div>
+      <!-- <div id="frame"> -->
+        <img src="http://kathrynisabelle.com/images/moon.jpg" id="backgroundImage" onload="steal()">
+        <div id="backGroundColor"></div>
+      <!-- </div> -->
+      <!-- <canvas id="canvo"></canvas> -->
+      <!-- <div id="color"></div> -->
     </main>
 
     <script>
 
-      var cat = document.getElementById("pic");
-      var catpic = new Image();
-      catpic.src = cat.src;
-      var c = document.getElementById("canvo");
-      var ctx = c.getContext("2d");
-      catpic.onload = function(){
-        ctx.drawImage(catpic, 0, 0);
-        catpic.style.display = "none";
-      };
-      var color = document.getElementById("color");
-      function pick(event){
-        var x = event.layerX;
-        var y = event.layerY;
-        var pixel = ctx.getImageData(x, y, 1, 1);
-        var data = pixel.data;
-        var rgba = "rgba(" + data[0] + "," + data[1] + "," + data[2] + "," + data[3] + ")";
-        color.style.background = rgba;
-        color.textContent = rgba;
-      }
-      c.addEventListener("mousemove", pick);
+    function steal() {
+      var backgroundColorThief = new BackgroundColorTheif();
+      var rgb = backgroundColorThief.getBackGroundColor(document.getElementById("backgroundImage"));
+      document.getElementById("backGroundColor").style.backgroundColor = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] +')';
+
+    }
+
+
+    // var colorThief = new BackgroundColorTheif();
+    // var rgb = colorThief.getBackGroundColor(document.getElementById("backgroundImage"));
+    // console.log('background-color = '+rgb);
+    // document.getElementById("backGroundColor").style.backgroundColor = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] +')';
+
+
+      // var cat = document.getElementById("pic");
+      // var catpic = new Image();
+      // catpic.src = cat.src;
+      // var c = document.getElementById("canvo");
+      // var ctx = c.getContext("2d");
+      // catpic.onload = function(){
+      //   ctx.drawImage(catpic, 0, 0);
+      //   catpic.style.display = "none";
+      // };
+      // var color = document.getElementById("color");
+      // function pick(event){
+      //   var x = event.layerX;
+      //   var y = event.layerY;
+      //   var pixel = ctx.getImageData(x, y, 1, 1);
+      //   var data = pixel.data;
+      //   var rgba = "rgba(" + data[0] + "," + data[1] + "," + data[2] + "," + data[3] + ")";
+      //   color.style.background = rgba;
+      //   color.textContent = rgba;
+      // }
+      // c.addEventListener("mousemove", pick);
       // ctx.fillStyle = "#FF0000";
       // ctx.fillRect(0, 0, 150, 75);
       // ctx.moveTo(0, 0);
