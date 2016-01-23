@@ -18,15 +18,19 @@
       height: 500px;
       border: 1px solid black;*/
     }
+    #backGroundColor{
+      height: 250px;
+      width: 250px;
+    }
     </style>
-    <script src="../Background-Color-Thief/background-color-theif.js">
+    <script src="../homepage/background-color-theif.js">
     </script>
   </head>
   <body>
     <main>
       <!-- <div id="frame"> -->
-        <img src="http://kathrynisabelle.com/images/moon.jpg" id="backgroundImage" onload="steal()">
-        <div id="backGroundColor"></div>
+      <div id="backGroundColor"></div>
+        <img src="../homepage/images/moon.jpg" id="backgroundImage"  onload="steal()">
       <!-- </div> -->
       <!-- <canvas id="canvo"></canvas> -->
       <!-- <div id="color"></div> -->
@@ -35,11 +39,22 @@
     <script>
 
     function steal() {
-      var backgroundColorThief = new BackgroundColorTheif();
-      var rgb = backgroundColorThief.getBackGroundColor(document.getElementById("backgroundImage"));
-      document.getElementById("backGroundColor").style.backgroundColor = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] +')';
 
-    }
+      // var canvo = document.createElement("canvas");
+      // canvo.width = pic.width;
+      // canvo.height = pic.height;
+      //
+      // var ctx = canvo.getContext("2d");
+      // ctx.drawImage(pic, 0, 0);
+      //
+      // var dataURL = canvo.toDataURL("image/png");
+      //
+      // var picData = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+
+        var backgroundColorThief = new BackgroundColorTheif();
+        var rgb = backgroundColorThief.getBackGroundColor(document.getElementById("backgroundImage"));
+        document.getElementById("backGroundColor").style.backgroundColor = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] +')';
+    };
 
 
     // var colorThief = new BackgroundColorTheif();
